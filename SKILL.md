@@ -59,7 +59,6 @@ When the user asks about a Godot class or concept, identify its domain from the 
 
 - Godot version: **4.x** (stable)
 - Generated from the official Godot HTML documentation
-- Refresh by re-running `/home/fortyseven/Downloads/godot-docs-html-stable/extract_godot_csharp.py`
 - Properties are listed as `Type Name = default` — these are C# property accessors
 - `[virtual]` methods are overridable in subclasses
 - `[static]` methods are called on the class, not an instance
