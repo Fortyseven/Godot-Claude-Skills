@@ -15,3 +15,7 @@ Any code agent that understands Claude-compatible skills should, in theory, work
 ## Scripts
 
 There are distillation scripts created by Claude present in the root of each section; these are included here for future updates.
+
+## Issues
+
+While I've given this a good once over, there may be errors. Feel free to post an Issue and I'll address it ASAP.
