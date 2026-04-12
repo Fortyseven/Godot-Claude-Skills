@@ -1,6 +1,6 @@
 ---
 name: godot-gdscript-api
-description: Godot 4 GDScript API reference skill. Use when answering questions about Godot 4 GDScript development, class methods, properties, signals, enums, or constants. Provides condensed GDScript-only API docs for all ~1,065 Godot 4 engine classes, split into domain-specific files.
+description: Godot 4 GDScript API reference and tutorials skill. Use when answering questions about Godot 4 GDScript development, class methods, properties, signals, enums, constants, or how-to guides. Provides condensed GDScript-only API docs for all ~1,065 Godot 4 engine classes plus 347 official tutorials, split into domain-specific files.
 ---
 
 # Godot 4 GDScript API Reference Skill
@@ -37,21 +37,60 @@ When the user asks about a Godot class or concept, identify its domain from the 
 | `godot_gdscript_misc_part1.md`  | A–N classes not in other domains (~285 classes including Node, SceneTree-related, GDExtension, etc.)                                                                           |
 | `godot_gdscript_misc_part2.md`  | N–Z classes not in other domains (~135 classes including Signal buses, XR, callable utilities, etc.)                                                                           |
 
+## Tutorial References — Load for "how to" questions
+
+When the user asks _how to do something_ (not just what a class/method is), load the relevant tutorial file from `references/tutorials/`. Tutorials show how to use classes together for specific tasks, complementing the API reference above.
+
+| Category        | Files                                                        | Topics                                                                                                                                              |
+| --------------- | ------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 2D              | `tutorials/tutorials_2d_part1.md` … `_part3.md`              | 2D movement, sprites, animation, particles, tilemaps, parallax, lighting, antialiasing, canvas layers, custom drawing                               |
+| 3D              | `tutorials/tutorials_3d_part1.md` … `_part9.md`              | 3D intro, lights/shadows, environment, materials, meshes, particles, procedural geometry, LOD, occlusion, fog, GI, text, CSG, GridMaps, decals, VRS |
+| Animation       | `tutorials/tutorials_animation_part1.md` … `_part2.md`       | AnimationPlayer, AnimationTree, cutout animation, 2D skeletons, track types, video playback                                                         |
+| Assets Pipeline | `tutorials/tutorials_assets_pipeline_part1.md` … `_part2.md` | Importing 3D scenes/images/audio, retargeting skeletons, export formats                                                                             |
+| Audio           | `tutorials/tutorials_audio.md`                               | Audio buses, effects, streams, recording, sync, text-to-speech                                                                                      |
+| Best Practices  | `tutorials/tutorials_best_practices_part1.md` … `_part2.md`  | Project/scene organization, autoloads, data preferences, node alternatives, version control                                                         |
+| Editor          | `tutorials/tutorials_editor_part1.md` … `_part3.md`          | Editor introduction, project manager, default keybindings, command palette, external editor                                                         |
+| Export          | `tutorials/tutorials_export_part1.md` … `_part3.md`          | Exporting projects, feature tags, platform-specific exports (Android, iOS, web, desktop)                                                            |
+| I18n            | `tutorials/tutorials_i18n_part1.md` … `_part2.md`            | Internationalization, localization, translations                                                                                                    |
+| Inputs          | `tutorials/tutorials_inputs.md`                              | Input handling, input map, controllers, mouse/keyboard, custom cursors                                                                              |
+| I/O             | `tutorials/tutorials_io.md`                                  | File access, saving/loading, data paths, config files, encryption                                                                                   |
+| Math            | `tutorials/tutorials_math_part1.md` … `_part2.md`            | Vector math, matrices, transforms, interpolation, random numbers, bezier curves                                                                     |
+| Migrating       | `tutorials/tutorials_migrating_part1.md` … `_part3.md`       | Migrating from Godot 3 to 4, version-specific changes                                                                                               |
+| Navigation      | `tutorials/tutorials_navigation_part1.md` … `_part3.md`      | Navigation meshes, agents, obstacles, pathfinding, avoidance                                                                                        |
+| Networking      | `tutorials/tutorials_networking.md`                          | High-level multiplayer, RPCs, HTTP requests, WebSocket, ENet                                                                                        |
+| Performance     | `tutorials/tutorials_performance_part1.md` … `_part2.md`     | Optimization, profiling, multithreading, vertex animation, batching                                                                                 |
+| Physics         | `tutorials/tutorials_physics_part1.md` … `_part3.md`         | Physics bodies, collision layers, raycasting, joints, soft bodies, interpolation                                                                    |
+| Platform        | `tutorials/tutorials_platform_part1.md` … `_part2.md`        | Android, iOS, web, Linux platform-specific guides                                                                                                   |
+| Plugins         | `tutorials/tutorials_plugins_part1.md` … `_part2.md`         | EditorPlugin, inspector plugins, tool scripts, GDExtension                                                                                          |
+| Rendering       | `tutorials/tutorials_rendering_part1.md` … `_part2.md`       | Viewports, render pipeline, 2D/3D rendering, screen-reading shaders                                                                                 |
+| Scripting       | `tutorials/tutorials_scripting_part1.md` … `_part12.md`      | GDScript basics, signals, groups, resources, scenes, autoloads, debugging, cross-language, C#, GDExtension, C++                                     |
+| Shaders         | `tutorials/tutorials_shaders_part1.md` … `_part7.md`         | Shader intro, shader language reference, spatial/canvas/particle/sky/fog shaders, visual shaders                                                    |
+| UI              | `tutorials/tutorials_ui_part1.md` … `_part4.md`              | Control nodes, themes, containers, size/anchors, BBCode, custom GUI, fonts                                                                          |
+| XR              | `tutorials/tutorials_xr_part1.md` … `_part4.md`              | OpenXR setup, VR/AR, hand tracking, passthrough, deploy to headset                                                                                  |
+| General         | `tutorials/tutorials_general.md`                             | Troubleshooting                                                                                                                                     |
+
 ## Routing Heuristic
 
+For **API questions** ("what does X do?"), use the API reference files above.
+For **how-to questions** ("how do I move a character?"), load both the API reference AND the matching tutorial file.
+
 - **Scene tree, nodes, lifecycle** → core.md + nodes_2d.md or nodes_3d.md
-- **2D gameplay** → nodes_2d.md + physics.md
-- **3D gameplay** → nodes_3d.md + physics.md
-- **UI / HUD** → ui_controls.md
-- **Visual effects, materials, shaders** → rendering.md
-- **Sound** → audio.md
-- **Player input** → input.md
-- **Animations, tweens** → animation.md
+- **2D gameplay** → nodes*2d.md + physics.md + `tutorials/tutorials_2d*\*`
+- **3D gameplay** → nodes*3d.md + physics.md + `tutorials/tutorials_3d*\*`
+- **UI / HUD** → ui*controls.md + `tutorials/tutorials_ui*\*`
+- **Visual effects, materials, shaders** → rendering.md + `tutorials/tutorials_shaders_*`
+- **Sound** → audio.md + `tutorials/tutorials_audio.md`
+- **Player input** → input.md + `tutorials/tutorials_inputs.md`
+- **Animations, tweens** → animation.md + `tutorials/tutorials_animation_*`
 - **Images, fonts, themes** → resources.md
-- **Multiplayer, HTTP** → networking.md
-- **File I/O, settings** → filesystem.md
-- **Math, geometry** → math_types.md
-- **Editor tooling / plugins** → editor.md
+- **Multiplayer, HTTP** → networking.md + `tutorials/tutorials_networking.md`
+- **File I/O, settings** → filesystem.md + `tutorials/tutorials_io.md`
+- **Math, geometry** → math*types.md + `tutorials/tutorials_math*\*`
+- **Editor tooling / plugins** → editor.md + `tutorials/tutorials_plugins_*`
+- **GDScript language** → `tutorials/tutorials_scripting_*`
+- **Navigation / pathfinding** → `tutorials/tutorials_navigation_*`
+- **Physics setup** → physics.md + `tutorials/tutorials_physics_*`
+- **XR / VR / AR** → `tutorials/tutorials_xr_*`
 - **Unknown class** → search misc_part1.md then misc_part2.md
 - For broad questions, load core.md first as it contains the most fundamental classes
 
