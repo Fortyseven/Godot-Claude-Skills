@@ -71,6 +71,16 @@ When the user asks _how to do something_ (not just what a class/method is), load
 
 ## Routing Heuristic
 
+### Step 1: Specific term lookup (KEYWORD_INDEX.md)
+
+When the user asks about a **specific term, attribute, function, or pattern** (e.g., `[Export]`, `[GlobalClass]`, `GetNode`, `PackedScene`, `EditorPlugin`), **first** load `references/KEYWORD_INDEX.md`. This file maps terms directly to the files containing them. Load the listed file(s) to answer the question.
+
+### Step 2: Topic-based lookup (tutorials_index.md)
+
+When the user asks **how to do something** and the keyword index doesn't help, load `references/tutorials/tutorials_index.md`. This file lists every tutorial with its **section headers**, letting you find the right file without guessing from domain names alone.
+
+### Step 3: Domain-based routing (fallback)
+
 For **API questions** ("what does X do?"), use the API reference files above.
 For **how-to questions** ("how do I move a character?"), load both the API reference AND the matching tutorial file.
 
