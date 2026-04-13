@@ -1,6 +1,6 @@
 ---
 name: godot-csharp-api
-description: Godot 4 C# API reference and tutorials skill. Use when answering questions about Godot 4 C# development, class methods, properties, signals, enums, constants, or how-to guides. Provides condensed C#-only API docs for all ~1,065 Godot 4 engine classes plus 347 official tutorials, split into domain-specific files.
+description: Godot 4 C# API reference and tutorials skill. Use when answering questions about Godot 4 C# development, class methods, properties, signals, enums, constants, or how-to guides. Provides condensed C#-only API docs for all ~1,065 Godot 4 engine classes plus 347 official tutorials, split into domain-specific files. Do NOT use for GDScript Godot development — use godot-gdscript-api instead.
 ---
 
 # Godot 4 C# API Reference Skill
@@ -16,7 +16,9 @@ All content is C#-only:
 
 ## Skill Files — Load as needed
 
-When the user asks about a Godot class or concept, identify its domain from the table below, then read the corresponding file from `refernces/` to answer the question. For broad questions, start with `godot_csharp_core.md` as it contains the most fundamental classes.
+1. Identify the domain of the queried class or concept from the table below.
+2. Read the corresponding file from `references/`.
+3. Answer using the loaded content. For broad questions, start with `godot_csharp_core.md`.
 
 | File                          | Domain / Contents                                                                                                                                                              |
 | ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -39,7 +41,7 @@ When the user asks about a Godot class or concept, identify its domain from the 
 
 ## Tutorial References — Load for "how to" questions
 
-When the user asks _how to do something_ (not just what a class/method is), load the relevant tutorial file from `references/tutorials/`. Tutorials show how to use classes together for specific tasks, complementing the API reference above.
+For _how to_ questions (not just "what does X do?"), load the matching tutorial file from `references/tutorials/`. Tutorials show how to use classes together for specific tasks, complementing the API reference above.
 
 | Category        | Files                                                        | Topics                                                                                                                                              |
 | --------------- | ------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -73,15 +75,21 @@ When the user asks _how to do something_ (not just what a class/method is), load
 
 ### Step 1: Specific term lookup (KEYWORD_INDEX.md)
 
-When the user asks about a **specific term, attribute, function, or pattern** (e.g., `[Export]`, `[GlobalClass]`, `GetNode`, `PackedScene`, `EditorPlugin`), **first** load `references/KEYWORD_INDEX.md`. This file maps terms directly to the files containing them. Load the listed file(s) to answer the question.
+If the query contains a **specific term, attribute, function, or pattern** (e.g., `[Export]`, `[GlobalClass]`, `GetNode`, `PackedScene`, `EditorPlugin`):
+1. Load `references/KEYWORD_INDEX.md`.
+2. Find the term and note which file(s) contain it.
+3. Load those file(s) and answer from their content.
 
 ### Step 2: Topic-based lookup (tutorials_index.md)
 
-When the user asks **how to do something** and the keyword index doesn't help, load `references/tutorials/tutorials_index.md`. This file lists every tutorial with its **section headers**, letting you find the right file without guessing from domain names alone.
+If the query is a **how-to question** and the keyword index does not help:
+1. Load `references/tutorials/tutorials_index.md`.
+2. Scan section headers to find the relevant tutorial file.
+3. Load that file and answer from its content.
 
 ### Step 3: Domain-based routing (fallback)
 
-For **API questions** ("what does X do?"), use the API reference files above.
+For **API questions** ("what does X do?"), load the matching API reference file from the table above.
 For **how-to questions** ("how do I move a character?"), load both the API reference AND the matching tutorial file.
 
 - **Scene tree, nodes, lifecycle** → core.md + nodes_2d.md or nodes_3d.md
